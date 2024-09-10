@@ -11,8 +11,8 @@ This project built with React.js and Material UI.
 
 | <!--                                --> | <!--                                --> | <!--                                --> |
 |-----------------------------------------|-----------------------------------------|-----------------------------------------|
-| !["Preview Image"](./img/Preview2.png) | !["Preview Image"](./img/preview4.png) | !["Preview Image"](./img/preview6.png) |
-| !["Preview Image"](./img/preview3.png) | !["Preview Image"](./img/preview5.png) |
+| !["Preview Image"](./img/Preview2.png) | !["Preview Image"](./img/Preview4.png) | !["Preview Image"](./img/Preview6.png) |
+| !["Preview Image"](./img/Preview3.png) | !["Preview Image"](./img/Preview5.png) |
 
 ## Features
 - Browse Pokémons based on their types (This component not complete)
