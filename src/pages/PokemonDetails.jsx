@@ -147,7 +147,7 @@ const PokemonDetail = () => {
           </div>
           <div className="abilities">
             {pokemon.data?.abilities.map((item) => {
-              return <h2 className="group">{item.ability?.name}</h2>;
+              return <h2 key={item} className="group">{item.ability?.name}</h2>;
             })}
           </div>
           <Box sx={{

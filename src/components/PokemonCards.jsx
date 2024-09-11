@@ -8,7 +8,7 @@ import { useSearch } from "../context/SearchContext";
 
 
 const PokemonCards = ({ pokemon, loading }) => {
-  const { searchType, query } = useSearch();
+  const { searchType, query,selectedType } = useSearch();
   return (
     <>
       {loading ? (
@@ -20,6 +20,9 @@ const PokemonCards = ({ pokemon, loading }) => {
               return item.id.toString().includes(query);
             } else if (searchType === "Search by Pokemon name") {
               return item.name.toLowerCase().includes(query.toLowerCase());
+            } else if (selectedType) {
+              // Filter by selected type
+              return item.types.some((type) => type.type.name === selectedType);
             } else {
               return true; // عرض جميع الـ Pokémon  إذا لم يتم تحديد نوع البحث
             }

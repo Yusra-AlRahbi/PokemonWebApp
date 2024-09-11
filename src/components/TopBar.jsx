@@ -4,10 +4,13 @@ import TypesBar from "./TypesBar";
 import { pokemonTypes } from "../../PokemonTypes";
 import axios from "axios";
 import { useState } from "react";
+import { useSearch } from "../context/SearchContext";
 
 const TopBar = () => {
   const [filtered, setFiltered] = useState(false);
   const [pokeData, setPokeData] = useState([]);
+  const { selectedType } = useSearch();
+
   const fetchFilter = async (value) => {
     if (value) {
       try {
@@ -19,7 +22,7 @@ const TopBar = () => {
           // slice out alternate forms and megas
           if (
             item.pokemon.url
-              .slice("-6")
+              .slice(-6)
               .replace(/\D/g, "")
               .replaceAll("/", "") < 10000
           ) {
@@ -53,10 +56,8 @@ const TopBar = () => {
           <Stack direction={"row"} spacing={1}  useFlexGap flexWrap="wrap">
           {pokemonTypes.map(({ name }) => {
               return (
-                  <TypesBar fetchFilter={fetchFilter} type={name}/>
+                <TypesBar key={name} type={name} fetchFilter={fetchFilter} />
               );
-
-
           })}
 
           </Stack>
