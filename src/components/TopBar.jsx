@@ -8,7 +8,7 @@ import { useSearch } from "../context/SearchContext";
 
 const TopBar = () => {
   const [filtered, setFiltered] = useState(false);
-  const [pokeData, setPokeData] = useState([]);
+  // const [pokeData, setPokeData] = useState([]);
   const { selectedType } = useSearch();
 
   const fetchFilter = async (value) => {
@@ -17,23 +17,6 @@ const TopBar = () => {
         const result = await axios.get(
           `https://pokeapi.co/api/v2/type/${value}`
         );
-        const filteredPokemon = result.data.pokemon;
-        filteredPokemon.map(async (item) => {
-          // slice out alternate forms and megas
-          if (
-            item.pokemon.url
-              .slice(-6)
-              .replace(/\D/g, "")
-              .replaceAll("/", "") < 10000
-          ) {
-            setPokeData([]);
-            const result = await axios.get(item.pokemon.url);
-            setPokeData((state) => {
-              state = [...state, result.data];
-              return state;
-            });
-          }
-        });
         setFiltered(true);
       } catch (e) {
         console.log(e);
