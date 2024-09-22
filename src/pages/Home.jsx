@@ -3,17 +3,15 @@ import TopBar from "../components/TopBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Grid, Container,Box,Button } from "@mui/material";
-import { LogoDev } from "@mui/icons-material";
 
-const Home = ({ searchType, searchTerm }) => {
+
+const Home = ()=> {
   const [pokeData, setPokeData] = useState([]);
    const [loading, setLoading] = useState(true);
    const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
    const [pokeDex, setPokeDex] = useState();
    const [nextUrl, setNextUrl] = useState();
    const [prevUrl, setPrevUrl] = useState();
-  // const [searchType, setSearchType] = useState('');
-  // const [searchTerm, setSearchTerm] = useState('');
 
   const pokeFun = async () => {
     if (pokeData.length > 0) {
@@ -41,24 +39,6 @@ const Home = ({ searchType, searchTerm }) => {
       pokeFun();
  }, [url]);
 
-
- 
-//  useEffect(() => {
-//   if (searchTerm) {
-//     const baseURL = 'https://pokeapi.co/api/v2/';
-//     const searchURL = searchType.includes('Name')
-//       ? `${baseURL}pokemon/${searchTerm.toLowerCase()}`
-//       : `${baseURL}pokemon-species/${searchTerm}`;
-
-//     axios.get(searchURL)
-//       .then((response) => {
-//         setPokeData(response.data);
-//       })
-//       .catch((error) => {
-//         console.error('There was an error fetching the Pokémon data:', error);
-//       });
-//   }
-// }, [searchType, searchTerm]);
   return (
     <>
       <TopBar  />
