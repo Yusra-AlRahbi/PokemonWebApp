@@ -15,8 +15,8 @@ This project built with React.js and Material UI.
 | !["Preview Image"](./img/Preview3.png) | !["Preview Image"](./img/Preview5.png) |
 
 ## Features
-- Browse Pokémons based on their types (This component not complete)
--Search Pokémons based on their name or Id Number (This component not complete)
+- Browse Pokémons based on their types.
+-Search Pokémons based on their name or Id Number.
 - Clicking on a Pokémon opens a modal with detailed information
   - About tab: Displays information about the selected Pokémon
   - Stats tab: Shows the statistical attributes and characteristics of the Pokémon
